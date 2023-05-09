@@ -13,6 +13,7 @@ import requests
 
 {"error":"Wrong token. Please provide token as a GET parameter."}
 
+{'error': 'Instance not found'}
 '''
 
 def get_status(response):
@@ -23,22 +24,31 @@ def get_status(response):
     print('*' * 100)
     out = ''
     err = result.get('error', '')
-    acc_status =  result['status']['accountStatus']
-    print(acc_status)
-    sub_status =acc_status.get('substatus', '')
-    status = acc_status.get('status', '')
-    print(sub_status, sub_status == 'connected')
-    print(status)
     print(err)
     if err:
-        err = 'token_error' if 'Wrong token' in err else 'unknown_error'
-    elif sub_status == 'connected':
-        out = 'connected'
+        if 'Wrong token' in err:
+            return 'token_error'
+        elif 'Instance not found' in err:
+            return 'instance_error'
+        else:
+            return 'unknown_error'
+
+    acc_status =  result.get('status', '')
+    if acc_status:
+        acc_status = acc_status.get('accountStatus', '')
+    
+    print(acc_status)
+
+    sub_status =acc_status.get('substatus', '')
+    status = acc_status.get('status', '')
+    print(sub_status)
+    print(status)
+
+    if sub_status == 'connected':
+        return 'connected'
     elif sub_status == 'normal':
-        out = 'disconnected'
-    else:
-        out = 'expired'
-    return out
+        return 'disconnected'
+
 
         
 class UltramsgInstance(models.Model):
@@ -55,6 +65,7 @@ class UltramsgInstance(models.Model):
         ('disconnected', 'Disconnected'), 
         ('expired', 'Expired'),
         ('token_error', 'Token Error'),
+        ('instance_error', 'Not Found'),
         ('unknown_error', 'Unknown Error'),
         ],
         compute="_status_comp"
@@ -69,6 +80,9 @@ class UltramsgInstance(models.Model):
 
 
     def check_status(self):
+        if not self.instance_id or not self.token:
+            return None
+        
         url = f"https://api.ultramsg.com/{self.instance_id}/instance/status"
 
         querystring = {
@@ -102,7 +116,10 @@ class UltramsgInstance(models.Model):
 
     @api.model
     def create(self, vals):
+        print('creaaaaaaaaaaaaaaaaaaaaaaaat')
+        print(vals)
         x = super(UltramsgInstance, self).create(vals)
+        print('x', x)
         x._register_instance_url()
         return x
 

@@ -31,7 +31,8 @@
             <widget name="web_ribbon" title="Disconnected" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'disconnected')]}"/>
             <widget name="web_ribbon" title="Expired" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'expired')]}"/>
             <widget name="web_ribbon" title="Token Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'token_error')]}"/>
-            <widget name="web_ribbon" title="Token Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'unknown_error')]}"/>
+            <widget name="web_ribbon" title="Not Found" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'instance_error')]}"/>
+             <widget name="web_ribbon" title="Unknown Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'unknown_error')]}"/>
          
             <group>
               <group>
