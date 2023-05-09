@@ -6,7 +6,7 @@ import werkzeug.utils
 
 
 class UltramsgController(http.Controller):
-    @http.route('/ultramsg/instance/<int:invoice_id>', type='json', auth="none", csrf=False)
+    @http.route('/ultramsg/instance/<string:instance_id>', type='json', auth="none", csrf=False)
     def update_status(self, instance_id, **kw):
         print('*' * 100)
         print(instance_id)
