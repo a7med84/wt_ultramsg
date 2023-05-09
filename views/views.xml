@@ -1,0 +1,102 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="wt_ultramsg.list">
+      <field name="name">Ultramsg Instances List</field>
+      <field name="model">ultramsg.instance</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="instance_id"/>
+          <field name="token"/>
+          <field name="daily_checks"/>
+          <field name="status" widget="badge" 
+              decoration-success="status == 'connected'"
+              decoration-danger="status != 'connected'"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="wt_ultramsg_form" model="ir.ui.view">
+      <field name="name">Ultramsg Instance Form</field>
+      <field name="model">ultramsg.instance</field>
+      <field name="arch" type="xml">
+        <form string="Barq Call" edit="0" create="false">
+          <sheet>
+          <field name="id" invisible="1"/>
+          <field name="status" invisible="1"/>
+            <!-- Instance status -->
+            <widget name="web_ribbon" title="Connected" bg_color="bg-success" attrs="{'invisible': [('status', '!=', 'connected')]}"/>
+            <widget name="web_ribbon" title="Disconnected" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'disconnected')]}"/>
+            <widget name="web_ribbon" title="Expired" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'expired')]}"/>
+            <widget name="web_ribbon" title="Token Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'token_error')]}"/>
+            <widget name="web_ribbon" title="Token Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'unknown_error')]}"/>
+         
+            <group>
+              <group>
+              <field name="name"/>
+              <field name="daily_checks"/>
+            </group>
+            <group>
+              <field name="instance_id" attrs="{'readonly':[('id','>', 0)]}"/>
+              <field name="token"/>
+            </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="wt_ultramsg.instances_action_window">
+      <field name="name">wt_ultramsg window</field>
+      <field name="res_model">ultramsg.instance</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              No Result
+        </p>
+      </field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="wt_ultramsg.action_server">
+      <field name="name">wt_ultramsg server</field>
+      <field name="model_id" ref="model_wt_ultramsg_wt_ultramsg"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="wt_ultramsg" id="wt_ultramsg.menu_root" web_icon="wt_ultramsg,static/description/icon.png"/>
+
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="wt_ultramsg.menu_1" parent="wt_ultramsg.menu_root"/>
+    <menuitem name="Menu 2" id="wt_ultramsg.menu_2" parent="wt_ultramsg.menu_root"/>
+-->
+    <!-- actions -->
+
+    <menuitem name="Instances" id="wt_ultramsg_instances_list" parent="wt_ultramsg.menu_root" action="wt_ultramsg.instances_action_window"/>
+
+    <menuitem name="Log" id="wt_ultramsg_update_menuitem" parent="wt_ultramsg.menu_root" action="wt_ultramsg_update_action_window" sequence="20"/>
+<!--
+    <menuitem name="List" id="wt_ultramsg.menu_1_list" parent="wt_ultramsg.menu_1"
+              action="wt_ultramsg.action_window"/>
+    <menuitem name="Server to list" id="wt_ultramsg" parent="wt_ultramsg.menu_2"
+              action="wt_ultramsg.action_server"/>
+-->
+  </data>
+</odoo>

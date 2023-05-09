@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    main category   -->
+        <record id="wt_ultramsg_main_category" model="ir.module.category">
+            <field name="name">Ultramsg Check</field>
+            <field name="sequence" eval="20"/>
+        </record>
+
+
+        <record id="ultramsg_group_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="wt_ultramsg.wt_ultramsg_main_category"/>
+        </record>
+    </data>
+</odoo> 
