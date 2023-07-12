@@ -8,6 +8,7 @@ import base64
 import io
 import pandas as pd
 from ..utils.funcs import is_phone_number, format_phone_number
+from ..models.models import DEFAULT_MIN_DURATION, DEFAULT_MAX_ACTIVE_GROUPS
 
 Max_UPLOAD_SIZE = "5242880"
 MIMETYPE = "text/csv"
@@ -34,8 +35,6 @@ class SendWizard(models.TransientModel):
         
 
     def action_send(self):
-        print('*' * 100)
-        print(self.env.context)
         data = self.read(['instance_id', 'message_id', 'message'])[0]
         if not (data['message_id'] or data['message']):
             raise UserError(_('Select or enter a message'))
@@ -215,12 +214,14 @@ class ResConfigSettings(models.TransientModel):
     max_active_groups = fields.Integer("Max Active Groups", help="Maximmum number of active groups at the same time")
     min_duration = fields.Float('Duration HH:mm', help="Minimum duration between each message in a group")
 
+    
     @api.model
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
-        res['max_active_groups'] = int(self.env['ir.config_parameter'].sudo().get_param('wt_ultramsg.max_active_groups'))
-        res['min_duration'] = self.env['ir.config_parameter'].sudo().get_param('wt_ultramsg.min_duration')
+        res['max_active_groups'] = int(self.env['ir.config_parameter'].sudo().get_param('wt_ultramsg.max_active_groups')) or DEFAULT_MAX_ACTIVE_GROUPS
+        res['min_duration'] = self.env['ir.config_parameter'].sudo().get_param('wt_ultramsg.min_duration') or DEFAULT_MIN_DURATION
         return res
+
 
     @api.model
     def set_values(self):
@@ -228,10 +229,7 @@ class ResConfigSettings(models.TransientModel):
         res = self.env['ultramsg.send_group']
         if self.max_active_groups < res.n_active:
             message +=  '●    ' + _("Max active groups can't be less than current active groups") + f' ({res.n_active})'
-        
-        print('*' * 100)
-        print(self.min_duration, max(self.min_duration, 1.0), res.smallest_duration, max(self.min_duration, 1.0) < res.smallest_duration)
-        
+                
         self.min_duration = max(self.min_duration, 1.0)
         if  self.min_duration < res.smallest_duration:
             # first value "self.min_duration" smaller

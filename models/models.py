@@ -33,8 +33,6 @@ def get_status(response):
         {'error': 'Your instance has been Stopped due to non-payment. you can activate this instance by extending your subscription. Payment information updates every 5 minutes.'}
     '''
     result = response.json()
-    print('*' * 100)
-    print(result)
     err = result.get('error', '')
     if err:
         if 'Wrong token' in err:
@@ -153,8 +151,6 @@ class UltramsgInstance(models.Model):
 
         response = requests.post(instance_url, json=payload, headers=headers)
 
-        print(response.json())
-
 
 
 class UltramsgMobileNo(models.Model):
@@ -227,11 +223,15 @@ class UltramsgMobileNo(models.Model):
 
 
 def min_duration(self):
-        return float(self.env['ir.config_parameter'].get_param('wt_ultramsg.min_duration', 1.0))
+    return float(self.env['ir.config_parameter'].get_param('wt_ultramsg.min_duration', 1.0))
     
+
 def max_active_groups(self):
     return int(self.env['ir.config_parameter'].get_param('wt_ultramsg.max_active_groups', 5))
 
+
+DEFAULT_MIN_DURATION = 1.0
+DEFAULT_MAX_ACTIVE_GROUPS = 5.0
 
 class UltramsgSendGroup(models.Model):
     _name = 'ultramsg.send_group'
@@ -298,12 +298,10 @@ class UltramsgSendGroup(models.Model):
     def _compute_instance_is_connected(self):
         for rec in self:
             rec.instance_is_connected = not rec.instance_id or rec.instance_id.status == 'connected'
-            print(str(rec.instance_is_connected).center(100, 'z'))
-     
+
+
     @api.onchange('is_active')
     def onchange_is_active(self):
-        print(' on change '.center(100, '*'))
-        print(self.is_active, self._origin.is_active)
         if self.is_active and not self._origin.is_active:
             if self.sent_to:
                 title = _("Warning")
@@ -346,7 +344,11 @@ class UltramsgSendGroup(models.Model):
 
     @property
     def smallest_duration(self):
-        return min([x.duration for x in self.search([])])
+        groups = self.search([])
+        if groups:
+            return min([x.duration for x in groups])
+        else:
+            return DEFAULT_MIN_DURATION
 
 
     def get_or_create_cron(self, create=True):
@@ -395,7 +397,6 @@ class UltramsgSendGroup(models.Model):
     
 
     def action_group_send(self, rec_id):
-        print(' action_group_send '.center(100, '*'))
         rec = self.env['ultramsg.send_group'].browse(rec_id)
 
         # update rec.is_active if not is_sendable and return
@@ -406,39 +407,24 @@ class UltramsgSendGroup(models.Model):
         mob, is_last = rec.next_mob
         sent, instance_connected = mob.send_text(rec.instance_id, rec.message_body, rec)
 
-        print(mob, is_last)
-        print( sent, instance_connected)
-
         # retun if instance not connected
         if not instance_connected:
-            print(' skipping: instance not connected '.center(100, '*'))
             return
         
         if sent:
             rec.sent_to_add_mob(mob.id) 
             if is_last:
                 # an iteration has ended
-                print('mob:', mob)
                 rec.sent_to = False
                 if not rec.iterations or rec.iterations > rec.current_iteration:
                     # reiterate
                     rec.current_iteration += 1
-                    print(rec.current_iteration, 'ci')
                 else:
                     # deactivate
                     rec.is_active = False
                     rec.current_iteration = 1
 
-"""
-sent, instance_connected = mobile_no.send_text(instance, message)
-        if sent:
-            return 
-        
-        if instance_connected:
-            raise ValidationError(_('Message not sent, please ensure mobile number have WhatsApp'))
-        else:
-            raise ValidationError(_('Message not sent, please check Ultramsg instance'))
-"""
+
 
 class UltramsgMessageReport(models.Model):
     _name = 'ultramsg.message_report'
