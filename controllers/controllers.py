@@ -5,10 +5,9 @@ import uuid
 import werkzeug.utils
 
 
-class UltramsgController(http.Controller):
+""" class UltramsgController(http.Controller):
     @http.route('/ultramsg/instance/<string:instance_id>', type='json', auth="none", csrf=False)
     def update_status(self, instance_id, **kw):
-        print('*' * 100)
         print(instance_id)
         print(kw)
         
@@ -17,8 +16,7 @@ class UltramsgController(http.Controller):
         
         print(instance)
 
-        print('*' * 100)
         http.request.env['ultramsg.update'].sudo().create({
                 'instance_id': instance_id,
                 'raw_data': kw,
-            })
+            }) """

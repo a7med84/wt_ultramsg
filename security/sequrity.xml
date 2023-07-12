@@ -3,13 +3,13 @@
     <data>
         <!--    main category   -->
         <record id="wt_ultramsg_main_category" model="ir.module.category">
-            <field name="name">Ultramsg Check</field>
+            <field name="name">Ultramsg</field>
             <field name="sequence" eval="20"/>
         </record>
 
 
-        <record id="ultramsg_group_user" model="res.groups">
-            <field name="name">User</field>
+        <record id="ultramsg_group_admin" model="res.groups">
+            <field name="name">Admin</field>
             <field name="category_id" ref="wt_ultramsg.wt_ultramsg_main_category"/>
         </record>
     </data>

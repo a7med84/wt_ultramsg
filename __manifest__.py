@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Ultramsg Check",
+    'name': "Ultramsg",
 
     'summary': """
-        Ultramsg instances status checking""",
+        Ultramsg Implementation""",
 
     'description': """
-        Check the status of Ultramsg instances and send notification via SMS if not working
+        Send whatsapp messages usingUltramsg
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Ahmed Addawody",
+    'website': "https://wide-techno.com/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Communications',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -25,7 +25,7 @@
     'data': [
         'security/sequrity.xml',
         'security/ir.model.access.csv',
-        'views/log_views.xml',
+        'wizard/wizard_views.xml',
         'views/views.xml',
         'views/templates.xml',
     ],

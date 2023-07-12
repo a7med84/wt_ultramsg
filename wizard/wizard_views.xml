@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- ultramsg.wizard.send -->
+    <!--    form views -->
+    <record id="send_whatsapp_message_wizard" model="ir.ui.view">
+        <field name="name">Send whatsapp message form</field>
+        <field name="model">ultramsg.wizard.send</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="instance_id"/>
+                        <field name="message_id" attrs="{'invisible':[('message', '!=', False)]}"/>
+                        <field name="message_body" readon="1" attrs="{'invisible':[('message_id', '==', False)]}"/>
+                        <field name="message" attrs="{'invisible':[('message_id', '!=', False)]}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_send" string="Send" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    action -->
+    <record id="send_whatsapp_message_wizard_action" model="ir.actions.act_window">
+        <field name="name">Send Whatsapp Message</field>
+        <field name="res_model">ultramsg.wizard.send</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <!-- ultramsg.wizard.add_numbers -->
+    <!--    form views -->
+    <record id="import_mobile_numbers_wizard" model="ir.ui.view">
+        <field name="name">Import mobile numbers form</field>
+        <field name="model">ultramsg.wizard.add_numbers</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="numbers_file" widget="file_widget_limit_size_and_type" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>         
+                    </group>
+                    <notebook>
+                        <page string="Column labels">
+                            <group>
+                                <field name="number_column"/>
+                                <field name="name_column"/>
+                            </group>
+                        </page>
+                    </notebook>   
+                </sheet>
+                <footer>
+                    <button name="action_import" string="Import" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Back" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    action -->
+    <record id="import_mobile_numbers_wizard_action" model="ir.actions.act_window">
+        <field name="name">Import Numbers</field>
+        <field name="res_model">ultramsg.wizard.add_numbers</field>
+        <field name="context">{'default_date_format':'day_fitst'}</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+
+    <!-- ultramsg.wizard.add_result -->
+    <!--    form views -->
+    <record id="import_mobile_numbers_result" model="ir.ui.view">
+        <field name="name">Import mobile numbers result form</field>
+        <field name="model">ultramsg.add_result</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="file_name"  readonly="1"/>
+                            </h1>
+                        </div>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="n_records" readonly="1"/> 
+                            <field name="n_nan" readonly="1"/> 
+                        </group>
+                        <group>
+                            <field name="n_duplicates" readonly="1"/>
+                            <field name="n_invalid" readonly="1"/>
+                        </group> 
+                    </group>
+                    <notebook>
+                        <page string="Result">
+                            <field name="mobile_ids" nolabel="1" mode="tree"  readonly="1">
+                            <tree>
+                                <field name="number"/>
+                                <field name="status" widget="badge" 
+                                    decoration-success="status  in ('created_and_added', 'added')"
+                                    decoration-info="status == 'skipped'"
+                                    decoration-danger="status == 'invalid'"/>
+                            </tree>
+                            </field>
+                        </page>
+                    </notebook>   
+                </sheet>
+                <footer>
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    action -->
+    <record id="import_mobile_numbers_result_action" model="ir.actions.act_window">
+        <field name="name">Import Numbers Result</field>
+        <field name="res_model">ultramsg.add_result</field>
+        <field name="context">{'default_date_format':'day_fitst'}</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+
+    <!-- res.config.settings -->
+    <!--    form views -->
+    <record id="ultramsg_res_config_settings_view_form" model="ir.ui.view">
+     <field name="name">Ultramsg Settings</field>
+     <field name="model">res.config.settings</field>
+     <field name="priority" eval="150"/>
+     <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+     <field name="arch" type="xml">
+         <xpath expr="//div[hasclass('settings')]" position="inside">
+             <div class="app_settings_block" data-string="Ultramsg" string="Ultramsg" data-key="wt_ultramsg">
+                 <h2>Send Groups</h2>
+                 <div class="row mt16 o_settings_container">
+                     <div class="col-12 col-lg-6 o_setting_box">
+                         <div class="o_setting_left_pane"/>
+                         <div class="o_setting_right_pane">
+                             <span class="o_form_label">Max active groups</span>
+                             <div class="text-muted content-group mt16">
+                                 <field name="max_active_groups" class="text-center oe_inline" />
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="row mt16 o_settings_container">
+                     <div class="col-12 col-lg-6 o_setting_box">
+                         <div class="o_setting_left_pane"/>
+                         <div class="o_setting_right_pane">
+                             <span class="o_form_label">Minimum duration between each message in a group</span>
+                             <div class="text-muted content-group mt16">
+                                 <field name="min_duration" class="text-center oe_inline" widget='float_time'/>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </xpath>
+     </field>
+ </record>
+
+ <!--    action -->
+ <record id="ultramsg_res_config_settings_action_window" model="ir.actions.act_window">
+        <field name="name">Ultramsg Config</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'wt_ultramsg'}</field>
+    </record>
+</odoo>

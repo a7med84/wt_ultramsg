@@ -1,3 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_wt_ultramsg_wt_ultramsg,wt_ultramsg.wt_ultramsg,model_ultramsg_instance,ultramsg_group_user,1,1,1,1
-access_wt_ultramsg_updates,wt_ultramsg.updates,model_ultramsg_update,ultramsg_group_user,1,1,1,1
+access_wt_ultramsg_instance,wt_ultramsg.instance,model_ultramsg_instance,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_moblie_no,wt_ultramsg.moblie_no,model_ultramsg_moblie_no,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_send_group,wt_ultramsg.send_group,model_ultramsg_send_group,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_message_report,wt_ultramsg.message_report,model_ultramsg_message_report,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_message,wt_ultramsg.message,model_ultramsg_message,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_wizard_send,wt_ultramsg.wizard_send,model_ultramsg_wizard_send,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_wizard_add_numbers,wt_ultramsg.wizard_add_numbers,model_ultramsg_wizard_add_numbers,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_add_result,wt_ultramsg.add_result,model_ultramsg_add_result,ultramsg_group_admin,1,1,1,1
+access_wt_ultramsg_temp_mobile,wt_ultramsg.temp_mobile,model_ultramsg_temp_mobile,ultramsg_group_admin,1,1,1,1

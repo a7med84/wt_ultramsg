@@ -1,0 +1,857 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* wt_ultramsg
+# Translators:
+# Ahmed Addawody <a7med84@gmail.com>, 2023
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-12 20:17+0000\n"
+"PO-Revision-Date: 2023-07-12 20:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+"Language: ar\n"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Max active groups</span>"
+msgstr "\t<span class=\"o_form_label\">أقصى عدد من المجموعات النشطة</span>"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Minimum duration between each message in a "
+"group</span>"
+msgstr ""
+"<span class=\"o_form_label\">الحد الأدنى للمدة بين كل رسالة في "
+"المجموعة</span>"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid ""
+"<strong>\n"
+"                  <i class=\"fa fa-fw o_button_icon fa-exclamation-triangle\"/> \n"
+"                  Please check the Ultramsg instance as it is not connected\n"
+"                  </strong>"
+msgstr ""
+"<strong>\n"
+"                  <i class=\"fa fa-fw o_button_icon fa-exclamation-triangle\"/> \n"
+"                  فضلا التحقق من جهاز ألترا مسج ﻷنه غير متصل\n"
+"                  </strong>"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__is_active
+msgid "Activate"
+msgstr "تفعيل"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid ""
+"Active groups reached the maximum allowed, disable a group or contact the "
+"Administrator for more"
+msgstr "وصلت المجموعات النشطة إلى الحد الأقصى المسموح به، قم بتعطيل مجموعة أو تواصل مع المسؤول للسماح بالمزيد"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Add a number"
+msgstr "أضف رقم"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.moblie_no_form
+msgid "Add to Group"
+msgstr "أضف مجموعة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_temp_mobile__status__added
+msgid "Added"
+msgstr "تم الإضافة"
+
+#. module: wt_ultramsg
+#: model:res.groups,name:wt_ultramsg.ultramsg_group_admin
+msgid "Admin"
+msgstr "مدير"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_temp_mobile__status__skipped
+msgid "Already in Group"
+msgstr "متواجد في المجموعة بالفعل"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.import_mobile_numbers_wizard
+msgid "Back"
+msgstr "عودة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__body
+msgid "Body"
+msgstr "النص"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "Can't delete an active group"
+msgstr "لا يمكن حذف مجموعة نشطة"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.import_mobile_numbers_result
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_whatsapp_message_wizard
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Clear"
+msgstr "مسح"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Close"
+msgstr "اغلاق"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.import_mobile_numbers_wizard
+msgid "Column labels"
+msgstr "عناوين الأعمدة"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: wt_ultramsg
+#: model:ir.ui.menu,name:wt_ultramsg.menu_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__connected
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Connected"
+msgstr "متصل"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_send_group__iterations
+msgid "Count of send iterations: '0' for infinite iterations"
+msgstr "عدد دورات الإرسال: (صفر) للإرسال دائما"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_temp_mobile__status__created_and_added
+msgid "Created and Added"
+msgstr "أنشئ وأضيف للمجموعة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__create_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__create_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__create_date
+msgid "Created on"
+msgstr "أنشء على"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__cron_id
+msgid "Cron"
+msgstr "المُجدوِل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__current_iteration
+msgid "Current Iteration"
+msgstr "الدورة الحالية"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "Current iteration: "
+msgstr "الدورة الحالية: "
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_message_report__status__delivered
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.message_report_form
+msgid "Delivered"
+msgstr "تم الإرسال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__disconnected
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Disconnected"
+msgstr "غير متصل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_partner__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__display_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__n_duplicates
+msgid "Duplicated numbers"
+msgstr "الأرقام المكررة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_config_settings__min_duration
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__duration
+msgid "Duration HH:mm"
+msgstr "مدة الانتظار (دقيقة:ساعة)"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_send_group__duration
+msgid "Durations between each message"
+msgstr "مدة الانتظار بين كل رسالة"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "ERROR while readig the file: "
+msgstr "حدث خطأ أثناء قراءة الملف: "
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__n_nan
+msgid "Empty numbers"
+msgstr "حقول الأرقام الخاوية"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__message
+msgid "Enter Message"
+msgstr "نص الرسالة"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/utils/funcs.py:0
+#, python-format
+msgid "Enter valid phone number"
+msgstr "أدخل رقم هاتف صحيح"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "Error"
+msgstr "خطأ"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__expired
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Expired"
+msgstr "منتهي"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_message_report__status__failed
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.message_report_form
+msgid "Failed"
+msgstr "فشل الإرسال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__file_name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__file_name
+msgid "File Name"
+msgstr "اسم الملف"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__send_group_ids
+msgid "Groups"
+msgstr "المجموعات"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_config_settings__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_partner__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.import_mobile_numbers_wizard
+msgid "Import"
+msgstr "استيراد"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.import_mobile_numbers_wizard_action
+msgid "Import Numbers"
+msgstr "استيراد ألارقام"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.import_mobile_numbers_result_action
+msgid "Import Numbers Result"
+msgstr "تقرير استيراد الأرقام"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Import numbers"
+msgstr "استيراد الأرقام"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__instance_id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__ultramsg_instance
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__instance_id
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__instance_id
+msgid "Instance"
+msgstr "جهاز"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__instance_id
+msgid "Instance ID"
+msgstr "معرف الجهاز"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__instance_is_connected
+msgid "Instance Is Connected"
+msgstr "الجهاز متصل"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.instance_action_window
+#: model:ir.ui.menu,name:wt_ultramsg.menu_instance
+msgid "Instances"
+msgstr "الأجهزة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_temp_mobile__status__invalid
+msgid "Invalid Number"
+msgstr "رقم غير صحيح"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__n_invalid
+msgid "Invalid numbers"
+msgstr "الأرقام الغير صحيحة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__is_sendable
+msgid "Is Sendable"
+msgstr "هل يمكن الإرسال؟"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__iterations
+msgid "Iterations"
+msgstr "عدد الدورات"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "Iterations: "
+msgstr "عدد الدورات: "
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_partner____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers____last_update
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__write_uid
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__write_date
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث بواسطة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__linked_name
+msgid "Linked Name"
+msgstr "الاسم المتصل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__linked_number
+msgid "Linked Number"
+msgstr "الرقم المتصل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__sending_acc
+msgid "Linked whatsapp"
+msgstr "الواتساب المتصل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_config_settings__max_active_groups
+msgid "Max Active Groups"
+msgstr "أقصى عدد من المجموعات النشطة"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Max active groups can't be less than current active groups"
+msgstr "لا يمكن أن يقل أقصى عدد من المجموعات النشطة عن عدد المحموعات النشطة حاليا"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_res_config_settings__max_active_groups
+msgid "Maximmum number of active groups at the same time"
+msgstr "أقصى عدد من المجموعات النشطة في نفس الوقت"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__message
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__message_id
+msgid "Message"
+msgstr "الرسالة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__message_body
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__message_body
+msgid "Message Body"
+msgstr "نص الرسالة"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.moblie_no_form
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Message Reports"
+msgstr "تقارير الإرسال"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Message not sent, please check Ultramsg instance"
+msgstr "فشل الإرسال، يرجى التحقق من حالة جهاز ألترا مسج"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Message not sent, please ensure mobile number have WhatsApp"
+msgstr "فشل الإرسال، يرجى التحقق من تفعيل الرقم لخدمة الواتساب"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.message_action_window
+#: model:ir.ui.menu,name:wt_ultramsg.menu_message
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.message_report_action_window
+msgid "Messages Report"
+msgstr "تقارير الإرسال"
+
+#. module: wt_ultramsg
+#: model:ir.ui.menu,name:wt_ultramsg.menu_message_report
+msgid "Messages Reports"
+msgstr "تقارير الإرسال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_res_config_settings__min_duration
+msgid "Minimum duration between each message in a group"
+msgstr "الحد الأدنى للمدة بين كل رسالة في المجموعة"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Minimum duration can't be less than current minimum duration"
+msgstr "لا يمكن أن يقل الحد الأدنى للمدة بين كل رسالة في المجموعة عن الحد الحد الأقل في الجمجوعات القائمة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__mobile_ids
+msgid "Mobile"
+msgstr "الجوال"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.moblie_no_action_window
+#: model:ir.ui.menu,name:wt_ultramsg.menu_mobile_no
+msgid "Mobile Numbers"
+msgstr "ارقام الجوال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__mobile_no_ids
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Mobiles"
+msgstr "الجوالات"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__name
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__name_column
+msgid "Name"
+msgstr "الاسم"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_instance__linked_name
+msgid "Name of linked whatsapp account"
+msgstr "اسم جساب الواتساب المتصل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_instance__name
+msgid "Name to identify the instance"
+msgstr "اسم لتعريف الجهاز"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__network_error
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Network Error"
+msgstr "فشل الاتصال بالانترنت"
+
+#. module: wt_ultramsg
+#: model_terms:ir.actions.act_window,help:wt_ultramsg.instance_action_window
+#: model_terms:ir.actions.act_window,help:wt_ultramsg.message_action_window
+#: model_terms:ir.actions.act_window,help:wt_ultramsg.message_report_action_window
+#: model_terms:ir.actions.act_window,help:wt_ultramsg.moblie_no_action_window
+#: model_terms:ir.actions.act_window,help:wt_ultramsg.send_group_action_window
+msgid "No Result"
+msgstr "لا يوجد نتائج"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__instance_error
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Not Found"
+msgstr "غير موجود"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__number
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__number
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__number_column
+msgid "Number"
+msgstr "الرقم"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_instance__linked_number
+msgid "Number of linked whatsapp account"
+msgstr "رقم حساب الواتساب المتصل"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__payment_error
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Payment Error"
+msgstr "خطأ دفع"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__n_records
+msgid "Records in file"
+msgstr "عدد الأرقام في الملف"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Reset"
+msgstr "إعادة ضبط"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__respond_data
+msgid "Respond"
+msgstr "الرد الوارد"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.message_report_form
+msgid "Response"
+msgstr "الرد الوارد"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.import_mobile_numbers_result
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__message_id
+msgid "Select Message"
+msgstr "اختر رسالة"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Select or enter a message"
+msgstr "اختر أو أدخل رسالة"
+
+#. module: wt_ultramsg
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.moblie_no_form
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_whatsapp_message_wizard
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_partner_send_button_form
+msgid "Send"
+msgstr "إرسال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__send_group
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__send_group_id
+msgid "Send Group"
+msgstr "مجموعة إرسال"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.send_group_action_window
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__send_group_ids
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__send_group_ids
+#: model:ir.ui.menu,name:wt_ultramsg.menu_send_group
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.message_form
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.moblie_no_form
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_config_settings_view_form
+msgid "Send Groups"
+msgstr "مجموعات الإرسال"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.send_whatsapp_message_wizard_action
+msgid "Send Whatsapp Message"
+msgstr "إرسال رسالة واتساب"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__message_report_ids
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_moblie_no__message_report_ids
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__message_report_ids
+msgid "Sent Report"
+msgstr "تقرير الإرسال"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__sent_to
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__sent_to_comp
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
+msgid "Sent To"
+msgstr "أُرسل إلى"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "Sent to:"
+msgstr "أُرسل إلى: "
+
+#. module: wt_ultramsg
+#: model:ir.ui.menu,name:wt_ultramsg.settings
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__status
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__status
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_temp_mobile__status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_temp_mobile
+msgid "Temporary hold mobile number info to be used in the report"
+msgstr "الاحتفاظ بمعلومات رقم الجوال بشكل مؤقت لاستخدامها في التقرير"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "The file is empty!!"
+msgstr "الملف فارغ!!"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "The group will be activated with these settings:"
+msgstr "سيتم تفعيل المجموعة بالإعدادات التالية:"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_wizard_add_numbers__name_column
+msgid "The label of the name column in the CSV file"
+msgstr "معرف عمود الاسم في ملف CSV"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_wizard_add_numbers__number_column
+msgid "The label of the number column in the CSV file"
+msgstr "معرف عمود الرقم في ملف CSV"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "The selected file must be of type \"csv\""
+msgstr "الملف المختار يجب أن يكون من نوع (CSV)"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__mobile_no
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__mobile_no_id
+msgid "To"
+msgstr "إلى"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__token
+msgid "Token"
+msgstr "توكين ألترا مسج"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__token_error
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Token Error"
+msgstr "خطأ بالتوكين"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__transfers_file
+msgid "Numbers File"
+msgstr "ملف الأرقام"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Uknown model for Ultramsg: "
+msgstr "موديول غير معروف"
+
+#. module: wt_ultramsg
+#: model:ir.module.category,name:wt_ultramsg.wt_ultramsg_main_category
+#: model:ir.ui.menu,name:wt_ultramsg.menu_root
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_config_settings_view_form
+msgid "Ultramsg"
+msgstr "ألترا مسج"
+
+#. module: wt_ultramsg
+#: model:ir.actions.act_window,name:wt_ultramsg.ultramsg_res_config_settings_action_window
+msgid "Ultramsg Config"
+msgstr "إعدادات ألترا مسج"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_instance
+msgid "Ultramsg Instance Information"
+msgstr "معلومات جهاز ألترا ماسج"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_partner__ultramsg_number
+#: model:ir.model.fields,field_description:wt_ultramsg.field_res_users__ultramsg_number
+msgid "Ultramsg Number"
+msgstr "رقم ألترا ماسج"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_instance__instance_id
+msgid "Ultramsg instance id"
+msgstr "معرف جهاز ألترا ماسج"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_instance__token
+msgid "Ultramsg instance token"
+msgstr "توكين جهاز ألترا ماسج"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__unknown
+msgid "Unknown"
+msgstr "مجهول"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__unknown_error
+#: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
+msgid "Unknown Error"
+msgstr "خطأ مجهول"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/models/models.py:0
+#, python-format
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_wizard_add_numbers
+msgid "Wizard for adding numbers to send group from a CSV file"
+msgstr "معالج إضافة الأرقام لمجموعة من ملف CSV"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_wizard_send
+msgid "Wizard for sending text message"
+msgstr "معالج لإرسال رسالة نصية للواتساب"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "Your message was sent."
+msgstr "تم إرسال الرسالة"
+
+#. module: wt_ultramsg
+#: model:ir.model.constraint,message:wt_ultramsg.constraint_ultramsg_message_body_uniq
+msgid "body already exists!"
+msgstr "نص الرسالة مستخدم بالفعل!"
+
+#. module: wt_ultramsg
+#: model:ir.model.constraint,message:wt_ultramsg.constraint_ultramsg_instance_instance_id_uniq
+msgid "instance_id already exists!"
+msgstr "معرف الجهاز مستخدم بالفعل"
+
+#. module: wt_ultramsg
+#: model:ir.model.constraint,message:wt_ultramsg.constraint_ultramsg_send_group_name_uniq
+msgid "name already exists!"
+msgstr "الاسم مستخدم بالفعل"
+
+#. module: wt_ultramsg
+#: model:ir.model.constraint,message:wt_ultramsg.constraint_ultramsg_moblie_no_number_uniq
+msgid "number already exists!"
+msgstr "الرقم مستخدم بالفعل"
+
+#. module: wt_ultramsg
+#: model:ir.model.constraint,message:wt_ultramsg.constraint_ultramsg_message_title_uniq
+msgid "title already exists!"
+msgstr "عنوان الرسال مستخدم بالفعل"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_add_result
+msgid "ultramsg.add_result"
+msgstr "ألترا مسج.نتيجة إضافة الأرقام"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_message
+msgid "ultramsg.message"
+msgstr "ألترا مسج.رسالة"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_message_report
+msgid "ultramsg.message_report"
+msgstr "ألترا مسج. تقرير إرسال"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_moblie_no
+msgid "ultramsg.moblie_no"
+msgstr "ألترا مسج. رقم الجوال"
+
+#. module: wt_ultramsg
+#: model:ir.model,name:wt_ultramsg.model_ultramsg_send_group
+msgid "ultramsg.send_group"
+msgstr "ألتر مسج. مجموعة إرسال"

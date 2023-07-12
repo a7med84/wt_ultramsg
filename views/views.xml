@@ -1,8 +1,8 @@
 <odoo>
   <data>
+    <!-- ultramsg.instance -->
     <!-- explicit list view definition -->
-
-    <record model="ir.ui.view" id="wt_ultramsg.list">
+    <record model="ir.ui.view" id="instance_list">
       <field name="name">Ultramsg Instances List</field>
       <field name="model">ultramsg.instance</field>
       <field name="arch" type="xml">
@@ -10,49 +10,68 @@
           <field name="name"/>
           <field name="instance_id"/>
           <field name="token"/>
-          <field name="daily_checks"/>
-          <field name="status" widget="badge" 
-              decoration-success="status == 'connected'"
-              decoration-danger="status != 'connected'"/>
         </tree>
       </field>
     </record>
 
-    <record id="wt_ultramsg_form" model="ir.ui.view">
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="instance_form">
       <field name="name">Ultramsg Instance Form</field>
       <field name="model">ultramsg.instance</field>
       <field name="arch" type="xml">
-        <form string="Barq Call" edit="0" create="false">
+        <form>
           <sheet>
-          <field name="id" invisible="1"/>
-          <field name="status" invisible="1"/>
+            <field name="id" invisible="1"/>
+            <field name="status" invisible="1"/>
             <!-- Instance status -->
             <widget name="web_ribbon" title="Connected" bg_color="bg-success" attrs="{'invisible': [('status', '!=', 'connected')]}"/>
             <widget name="web_ribbon" title="Disconnected" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'disconnected')]}"/>
             <widget name="web_ribbon" title="Expired" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'expired')]}"/>
             <widget name="web_ribbon" title="Token Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'token_error')]}"/>
             <widget name="web_ribbon" title="Not Found" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'instance_error')]}"/>
-             <widget name="web_ribbon" title="Unknown Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'unknown_error')]}"/>
-         
+            <widget name="web_ribbon" title="Unknown Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'unknown_error')]}"/>
+            <widget name="web_ribbon" title="Payment Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'payment_error')]}"/>
+            <widget name="web_ribbon" title="Network Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'network_error')]}"/>
+            <widget name="web_ribbon" title="Unknown Error" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'unknown')]}"/>
+            <!--  -->
+            <group>
+              <div class="oe_title">
+                  <h1>
+                      <label for="name" class="oe_edit_only"/>
+                      <field name="name"/>
+                  </h1>
+                </div>
+            </group>
             <group>
               <group>
-              <field name="name"/>
-              <field name="daily_checks"/>
+                <field name="instance_id" attrs="{'readonly':[('id','&gt;', 0)]}"/>
+                <field name="token" attrs="{'readonly':[('status','!=', 'token_error'), ('id', '!=', False)]}"/>
+              </group>
+              <group>
+                <field name="linked_number" attrs="{'readonly': 1}"/>
+                <field name="linked_name" attrs="{'readonly': 1}"/>
+              </group>
             </group>
-            <group>
-              <field name="instance_id" attrs="{'readonly':[('id','>', 0)]}"/>
-              <field name="token"/>
-            </group>
-            </group>
+            <notebook>
+              <page string="Send Groups">
+                <field name="send_group_ids" nolabel="1" mode="tree" readonly="1">
+                  <tree>
+                    <field name="name"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Message Reports">
+                <field name="message_report_ids" nolabel="1" mode="tree" readonly="1" widget="one2manyt"/>
+              </page>
+            </notebook>
           </sheet>
         </form>
       </field>
     </record>
 
     <!-- actions opening views on models -->
-
-    <record model="ir.actions.act_window" id="wt_ultramsg.instances_action_window">
-      <field name="name">wt_ultramsg window</field>
+    <record model="ir.actions.act_window" id="instance_action_window">
+      <field name="name">Instances</field>
       <field name="res_model">ultramsg.instance</field>
       <field name="view_mode">tree,form</field>
       <field name="help" type="html">
@@ -63,41 +82,359 @@
     </record>
 
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="wt_ultramsg.action_server">
-      <field name="name">wt_ultramsg server</field>
-      <field name="model_id" ref="model_wt_ultramsg_wt_ultramsg"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+  <!-- ultramsg.moblie_no -->
+  <!-- explicit list view definition -->
+   <record model="ir.ui.view" id="moblie_no_list">
+      <field name="name">Ultramsg Mobile# List</field>
+      <field name="model">ultramsg.moblie_no</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="number"/>
+          <field name="name"/>
+        </tree>
       </field>
     </record>
--->
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="moblie_no_form">
+      <field name="name">Ultramsg Mobile# Form</field>
+      <field name="model">ultramsg.moblie_no</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+              <button name="action_send_wizard" type="object" icon="fa-whatsapp" string="Send" class="oe_highlight" attrs="{'invisible':[('number', '=', False)]}"/>
+          </header>
+          <sheet>
+          <group>
+              <div class="oe_title">
+                <h1>
+                  <label for="number" class="oe_edit_only"/>
+                  <field name="number"/>
+                </h1>
+              </div>
+              <div class="oe_title">
+                <h1>
+                  <label for="name" class="oe_edit_only"/>
+                  <field name="name"/>
+                </h1>
+              </div>
+            </group>
+            <notebook>
+              <page string="Send Groups">
+                <field name="send_group_ids" nolabel="1" mode="tree">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <control>
+                      <create name="add_group_control" string="Add to Group"/>
+                    </control>
+                  </tree>
+                </field>
+              </page>
+              <page string="Message Reports">
+                <field name="message_report_ids" nolabel="1" mode="tree" readonly="1" widget="one2manyt"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="moblie_no_action_window">
+      <field name="name">Mobile Numbers</field>
+      <field name="res_model">ultramsg.moblie_no</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              No Result
+        </p>
+      </field>
+    </record>
+
+
+
+  <!-- ultramsg.send_group -->
+  <!-- explicit list view definition -->
+   <record model="ir.ui.view" id="send_group_list">
+      <field name="name">Ultramsg Send Group List</field>
+      <field name="model">ultramsg.send_group</field>
+      <field name="arch" type="xml">
+        <tree decoration-muted="(not is_active)">
+        <!-- is sendable is added to triggre compute method which updates is active -->
+          <field name="is_sendable" invisible="1"/>
+          <field name="is_active" invisible="1"/>
+          <field name="name"/>
+          <field name="duration" widget="float_time"/>
+          <field name="iterations"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="send_group_form">
+      <field name="name">Ultramsg Send Group Form</field>
+      <field name="model">ultramsg.send_group</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+              <button name="action_add_numbers_wizard" type="object" icon="fa-mobile" string="Import numbers" 
+              class="oe_highlight" attrs="{'invisible':[('id', '=', False)]}"/>
+          </header>
+          <sheet>
+            <field name="instance_is_connected" invisible="1"/>
+            <div class="alert alert-danger text-center o_form_header" role="status"
+            attrs="{'invisible': ['|', ('is_active', '=', False), ('instance_is_connected', '=', True)]}">
+              <a class="close" data-dismiss="alert" href="#" aria-label="Close">x</a>
+              <div>
+                  <strong>
+                  <i class="fa fa-fw o_button_icon fa-exclamation-triangle"></i> 
+                  Please check the Ultramsg instance as it is not connected
+                  </strong>
+              </div>
+            </div>
+            <group>
+              <div class="oe_title">
+                <label for="name" class="oe_edit_only"/>
+                <h1>
+                    <field name="name"/>
+                </h1>
+                <label for="is_active"/>
+                <field name="is_sendable" invisible="1"/>
+                <field name="is_active" widget="boolean_toggle" attrs="{'readonly':[('is_sendable', '=', False)]}"/>
+              </div>
+            </group>
+            <group>
+              <group>
+                <field name='duration' widget='float_time'/>
+                <field name="iterations"/>
+                <label for="current_iteration"/>
+                <div class="o_row">
+                    <field name="current_iteration" readonly="1"/>
+                    <button name="action_reset_iterations" type="object" string="Reset" icon="fa-rotate-right" 
+                    class="oe_highlight" attrs="{'invisible':[('current_iteration', '=', 1)]}"/>
+                </div>
+              </group>
+              <group>
+                <field name="instance_id" widget="tags"/>
+                <field name="message_id"/>
+                <field name="message_body" readon="1" attrs="{'invisible':[('message_id', '==', False)]}"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Mobiles">
+                <field name="mobile_no_ids" nolabel="1" mode="tree">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <control>
+                      <create name="add_number_control" string="Add a number"/>
+                    </control>
+                  </tree>
+                </field>
+              </page>
+              <page string="Sent To">
+                <field name="sent_to_comp" nolabel="1" readonly="1" widget="html"/>
+                <field name="sent_to" invisible="1"/>
+                <button name="action_clear_sent_to" icon="fa-trash-o" type="object" string="Clear" 
+                class="oe_highlight" attrs="{'invisible':[('sent_to', '=', False)]}"/>
+              </page>
+              <page string="Message Reports">
+                <field name="message_report_ids" nolabel="1" mode="tree" readonly="1" widget="one2manyt"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="send_group_action_window">
+      <field name="name">Send Groups</field>
+      <field name="res_model">ultramsg.send_group</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              No Result
+        </p>
+      </field>
+    </record>
+
+
+
+  <!-- ultramsg.message_report -->
+  <!-- explicit list view definition -->
+   <record model="ir.ui.view" id="message_report_list">
+      <field name="name">Ultramsg Message Report List</field>
+      <field name="model">ultramsg.message_report</field>
+      <field name="arch" type="xml">
+        <tree default_order="create_date desc">
+          <field name="mobile_no_id"/>
+          <field name="create_date"/>
+          <field name="send_group_id"/>
+          <field name="instance_id"/>
+          <field name="status" widget="badge" 
+              decoration-success="status == 'delivered'"
+              decoration-danger="status == 'failed'"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="message_report_form">
+      <field name="name">Ultramsg Message Report Form</field>
+      <field name="model">ultramsg.message_report</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <field name="status" invisible="1"/>
+              <!-- status -->
+              <widget name="web_ribbon" title="Delivered" bg_color="bg-success" attrs="{'invisible': [('status', '!=', 'delivered')]}"/>
+              <widget name="web_ribbon" title="Failed" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'failed')]}"/>
+              <!--  -->
+            <div class="oe_title">
+              <label for="create_date" class="oe_edit_only"/>
+              <h1>
+                  <field name="create_date" readonly="1"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="mobile_no_id" readonly="1" attrs="{'invisible':[('mobile_no_id', '=', False)]}"/>
+                <field name="mobile_no" readonly="1" attrs="{'invisible':[('mobile_no_id', '!=', False)]}"/>
+                <field name="send_group_id" readonly="1" attrs="{'invisible':[('send_group_id', '=', False)]}"/>
+                <field name="send_group" readonly="1" attrs="{'invisible':[('send_group_id', '!=', False)]}"/>
+              </group>
+              <group>
+                <field name="instance_id" readonly="1" attrs="{'invisible':[('instance_id', '=', False)]}"/>
+                <field name="ultramsg_instance" readonly="1" attrs="{'invisible':[('instance_id', '!=', False)]}"/>
+                <field name="sending_acc" readonly="1"/>
+              </group>
+            </group>
+            <group>
+                <field name="message" readonly="1"/>
+            </group>
+            <notebook>
+              <page string="Response">
+                  <field name="respond_data" nolabel="1" readonly="1"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="message_report_action_window">
+      <field name="name">Messages Report</field>
+      <field name="res_model">ultramsg.message_report</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              No Result
+        </p>
+      </field>
+    </record>
+
+
+
+
+  <!-- ultramsg.message -->
+  <!-- explicit list view definition -->
+   <record model="ir.ui.view" id="message_list">
+      <field name="name">Ultramsg Message List</field>
+      <field name="model">ultramsg.message</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="title"/>
+          <field name="body"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="message_form">
+      <field name="name">Ultramsg Message Form</field>
+      <field name="model">ultramsg.message</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title">
+              <label for="title" class="oe_edit_only"/>
+              <h1>
+                  <field name="title"/>
+              </h1>
+            </div>
+            <group>
+              <field name="body"/>
+            </group>
+            <notebook>
+              <page string="Send Groups">
+                <field name="send_group_ids" nolabel="1" mode="tree" readonly="1">
+                  <tree>
+                    <field name="name"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="message_action_window">
+      <field name="name">Messages</field>
+      <field name="res_model">ultramsg.message</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              No Result
+        </p>
+      </field>
+    </record>
+    
+
+    <!-- res.partner -->
+    <!--    form views -->
+    <record id="ultramsg_res_partner_send_button_form" model="ir.ui.view">
+        <field name="name">Ultramsg Contact Send Button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+              <header>
+                <field name="ultramsg_number" invisible="1"/>
+                <button name="action_send_whatsapp" type="object" icon="fa-whatsapp" string="Send" 
+                class="oe_highlight" attrs="{'invisible':[('ultramsg_number', '=', False)]}"
+                groups="wt_ultramsg.ultramsg_group_admin"/>
+              </header>
+            </xpath>
+        </field>
+    </record>
+    
 
     <!-- Top menu item -->
 
-    <menuitem name="wt_ultramsg" id="wt_ultramsg.menu_root" web_icon="wt_ultramsg,static/description/icon.png"/>
+    <menuitem name="Ultramsg" id="wt_ultramsg.menu_root" web_icon="wt_ultramsg,static/description/icon.png"/>
 
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="wt_ultramsg.menu_1" parent="wt_ultramsg.menu_root"/>
-    <menuitem name="Menu 2" id="wt_ultramsg.menu_2" parent="wt_ultramsg.menu_root"/>
--->
+    <menuitem name="Send Groups" id="wt_ultramsg.menu_send_group" parent="wt_ultramsg.menu_root" sequence="1" action="wt_ultramsg.send_group_action_window"/>
+
+    <menuitem name="Messages Reports" id="wt_ultramsg.menu_message_report" parent="wt_ultramsg.menu_root" sequence="2" action="wt_ultramsg.message_report_action_window"/>
+
+    <menuitem name="Configuration" id="wt_ultramsg.menu_configuration" parent="wt_ultramsg.menu_root" sequence="3"/>
+
     <!-- actions -->
+    <menuitem name="Settings" id="wt_ultramsg.settings" parent="wt_ultramsg.menu_configuration" 
+    action="wt_ultramsg.ultramsg_res_config_settings_action_window" sequence="10"
+    groups="wt_ultramsg.ultramsg_group_admin"/>
+    
+    <menuitem name="Instances" id="wt_ultramsg.menu_instance" parent="wt_ultramsg.menu_configuration" 
+    action="wt_ultramsg.instance_action_window" sequence="20"/>
 
-    <menuitem name="Instances" id="wt_ultramsg_instances_list" parent="wt_ultramsg.menu_root" action="wt_ultramsg.instances_action_window"/>
-
-    <menuitem name="Log" id="wt_ultramsg_update_menuitem" parent="wt_ultramsg.menu_root" action="wt_ultramsg_update_action_window" sequence="20"/>
-<!--
-    <menuitem name="List" id="wt_ultramsg.menu_1_list" parent="wt_ultramsg.menu_1"
-              action="wt_ultramsg.action_window"/>
-    <menuitem name="Server to list" id="wt_ultramsg" parent="wt_ultramsg.menu_2"
-              action="wt_ultramsg.action_server"/>
--->
+    <menuitem name="Messages" id="wt_ultramsg.menu_message" parent="wt_ultramsg.menu_configuration" 
+    action="wt_ultramsg.message_action_window" sequence="30"/>
+    
+    <menuitem name="Mobile Numbers" id="wt_ultramsg.menu_mobile_no" parent="wt_ultramsg.menu_configuration" 
+    action="wt_ultramsg.moblie_no_action_window" sequence="40"/>
   </data>
 </odoo>
