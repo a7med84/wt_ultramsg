@@ -2,13 +2,12 @@
 
 from odoo import fields, models, api, _
 from odoo.exceptions import ValidationError, UserError
-from odoo.tools import float_compare, float_round
 from lxml import etree
 import base64
 import io
 import pandas as pd
-from ..utils.funcs import is_phone_number, format_phone_number
-from ..models.models import DEFAULT_MIN_DURATION, DEFAULT_MAX_ACTIVE_GROUPS
+from ..utils.funcs import is_phone_number, format_phone_number, max_active_groups, min_duration
+from ..utils.funcs import DEFAULT_MIN_DURATION, DEFAULT_MAX_ACTIVE_GROUPS
 
 Max_UPLOAD_SIZE = "5242880"
 MIMETYPE = "text/csv"
@@ -218,8 +217,8 @@ class ResConfigSettings(models.TransientModel):
     @api.model
     def get_values(self):
         res = super(ResConfigSettings, self).get_values()
-        res['max_active_groups'] = int(self.env['ir.config_parameter'].sudo().get_param('wt_ultramsg.max_active_groups')) or DEFAULT_MAX_ACTIVE_GROUPS
-        res['min_duration'] = self.env['ir.config_parameter'].sudo().get_param('wt_ultramsg.min_duration') or DEFAULT_MIN_DURATION
+        res['max_active_groups'] = max_active_groups(self)
+        res['min_duration'] = min_duration(self)
         return res
 
 
@@ -230,10 +229,10 @@ class ResConfigSettings(models.TransientModel):
         if self.max_active_groups < res.n_active:
             message +=  '●    ' + _("Max active groups can't be less than current active groups") + f' ({res.n_active})'
                 
-        self.min_duration = max(self.min_duration, 1.0)
-        if  self.min_duration < res.smallest_duration:
+        self.min_duration = max(self.min_duration, DEFAULT_MIN_DURATION)
+        if  self.min_duration > res.smallest_duration:
             # first value "self.min_duration" smaller
-            message +=  '\n●    ' + _("Minimum duration can't be less than current minimum duration") + f' ({res.smallest_duration})'
+            message +=  '\n●    ' + _("The minimum duration can't exceed the least duration in any created group") + f' ({res.smallest_duration})'
 
         if message:
             raise ValidationError(message)

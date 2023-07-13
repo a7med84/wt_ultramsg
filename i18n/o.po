@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-13 19:16+0000\n"
-"PO-Revision-Date: 2023-07-13 19:16+0000\n"
+"POT-Creation-Date: 2023-07-12 20:17+0000\n"
+"PO-Revision-Date: 2023-07-12 20:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. module: wt_ultramsg
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Max active groups</span>"
-msgstr ""
+msgstr "\t<span class=\"o_form_label\">أقصى عدد من المجموعات النشطة</span>"
 
 #. module: wt_ultramsg
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.ultramsg_res_config_settings_view_form
@@ -29,19 +29,8 @@ msgid ""
 "<span class=\"o_form_label\">Minimum duration between each message in a "
 "group</span>"
 msgstr ""
-
-#. module: wt_ultramsg
-#: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
-msgid ""
-"<strong>\n"
-"                  <i class=\"fa fa-fw o_button_icon fa-exclamation-triangle\"/> \n"
-"                  Iterations field is set to 0, This group will not stop!!\n"
-"                  </strong>"
-msgstr ""
-"<strong>\n"
-"                  <i class=\"fa fa-fw o_button_icon fa-exclamation-triangle\"/> \n"
-"                  عدد الدورات 0، سيؤدي ذلك لعدم توقف المجموعة!!\n"
-"                  </strong>"
+"<span class=\"o_form_label\">الحد الأدنى للمدة بين كل رسالة في "
+"المجموعة</span>"
 
 #. module: wt_ultramsg
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
@@ -67,7 +56,7 @@ msgstr "تفعيل"
 msgid ""
 "Active groups reached the maximum allowed, disable a group or contact the "
 "Administrator for more"
-msgstr "بلغت المجموعات النشطة الحد الأقصى، قم بتعطيل مجموعة أو تواصل مع المسؤول للسماح بالمزيد"
+msgstr "وصلت المجموعات النشطة إلى الحد الأقصى المسموح به، قم بتعطيل مجموعة أو تواصل مع المسؤول للسماح بالمزيد"
 
 #. module: wt_ultramsg
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
@@ -129,7 +118,8 @@ msgstr "اغلاق"
 #. module: wt_ultramsg
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.import_mobile_numbers_wizard
 msgid "Column labels"
-msgstr "عناوين الأعمدة في الملف"
+msgstr "عناوين الأعمدة"
+
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_res_config_settings
 msgid "Config Settings"
@@ -239,13 +229,7 @@ msgstr "الأرقام المكررة"
 #: model:ir.model.fields,field_description:wt_ultramsg.field_res_config_settings__min_duration
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__duration
 msgid "Duration HH:mm"
-msgstr ""
-
-#. module: wt_ultramsg
-#: code:addons/wt_ultramsg/models/models.py:0
-#, python-format
-msgid "Duration can't be less than %.2f"
-msgstr "لا يمكن أن تقل مجة الانتظار عن %.2f"
+msgstr "مدة الانتظار (دقيقة:ساعة)"
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_send_group__duration
@@ -256,7 +240,7 @@ msgstr "مدة الانتظار بين كل رسالة"
 #: code:addons/wt_ultramsg/wizard/wizard.py:0
 #, python-format
 msgid "ERROR while readig the file: "
-msgstr "حدث خطأ عن قراءة الملف: "
+msgstr "حدث خطأ أثناء قراءة الملف: "
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__n_nan
@@ -266,7 +250,7 @@ msgstr "حقول الأرقام الخاوية"
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__message
 msgid "Enter Message"
-msgstr "أدخل رسالة"
+msgstr "نص الرسالة"
 
 #. module: wt_ultramsg
 #: code:addons/wt_ultramsg/utils/funcs.py:0
@@ -326,17 +310,17 @@ msgstr "استيراد"
 #. module: wt_ultramsg
 #: model:ir.actions.act_window,name:wt_ultramsg.import_mobile_numbers_wizard_action
 msgid "Import Numbers"
-msgstr "استيراد أرقام"
+msgstr "استيراد ألارقام"
 
 #. module: wt_ultramsg
 #: model:ir.actions.act_window,name:wt_ultramsg.import_mobile_numbers_result_action
 msgid "Import Numbers Result"
-msgstr "استيراد ألارقام"
+msgstr "تقرير استيراد الأرقام"
 
 #. module: wt_ultramsg
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.send_group_form
 msgid "Import numbers"
-msgstr "استيراد أرقام"
+msgstr "استيراد الأرقام"
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__instance_id
@@ -344,7 +328,7 @@ msgstr "استيراد أرقام"
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_send_group__instance_id
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__instance_id
 msgid "Instance"
-msgstr "الجهاز"
+msgstr "جهاز"
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__instance_id
@@ -432,12 +416,12 @@ msgstr "آخر تحديث بواسطة"
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__linked_name
 msgid "Linked Name"
-msgstr "اسم الواتساب المتصل"
+msgstr "الاسم المتصل"
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_instance__linked_number
 msgid "Linked Number"
-msgstr "رقم الواتساب المتصل"
+msgstr "الرقم المتصل"
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_message_report__sending_acc
@@ -510,7 +494,13 @@ msgstr "تقارير الإرسال"
 #. module: wt_ultramsg
 #: model:ir.model.fields,help:wt_ultramsg.field_res_config_settings__min_duration
 msgid "Minimum duration between each message in a group"
-msgstr "الحد الأدنى لمدة الانتظار بين كل رسالة في المجموعة"
+msgstr "الحد الأدنى للمدة بين كل رسالة في المجموعة"
+
+#. module: wt_ultramsg
+#: code:addons/wt_ultramsg/wizard/wizard.py:0
+#, python-format
+msgid "The minimum duration can't exceed the least duration in any created group"
+msgstr "لا يمكن للحد الأدنى للمدة بين كل رسالة في المجموعة تخطي عن أقل مدة في المجموعات القائمة"
 
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_add_result__mobile_ids
@@ -581,11 +571,6 @@ msgid "Number of linked whatsapp account"
 msgstr "رقم حساب الواتساب المتصل"
 
 #. module: wt_ultramsg
-#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__numbers_file
-msgid "Numbers File"
-msgstr "ملف اﻷرقام"
-
-#. module: wt_ultramsg
 #: model:ir.model.fields.selection,name:wt_ultramsg.selection__ultramsg_instance__status__payment_error
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
 msgid "Payment Error"
@@ -619,7 +604,7 @@ msgstr "النتيجة"
 #. module: wt_ultramsg
 #: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_send__message_id
 msgid "Select Message"
-msgstr "اختر الرسالة"
+msgstr "اختر رسالة"
 
 #. module: wt_ultramsg
 #: code:addons/wt_ultramsg/wizard/wizard.py:0
@@ -714,16 +699,7 @@ msgstr "معرف عمود الاسم في ملف CSV"
 #. module: wt_ultramsg
 #: model:ir.model.fields,help:wt_ultramsg.field_ultramsg_wizard_add_numbers__number_column
 msgid "The label of the number column in the CSV file"
-msgstr  "معرف عمود الرقم في ملف CSV"
-
-#. module: wt_ultramsg
-#: code:addons/wt_ultramsg/wizard/wizard.py:0
-#, python-format
-msgid ""
-"The minimum duration can't exceed the least duration in any created group"
-msgstr ""
-"لا يمكن للحد الأدنى للمدة بين كل رسالة في المجموعة تخطي أقل مدة في "
-"المجموعات القائمة"
+msgstr "معرف عمود الرقم في ملف CSV"
 
 #. module: wt_ultramsg
 #: code:addons/wt_ultramsg/wizard/wizard.py:0
@@ -752,6 +728,11 @@ msgstr "توكين ألترا مسج"
 #: model_terms:ir.ui.view,arch_db:wt_ultramsg.instance_form
 msgid "Token Error"
 msgstr "خطأ بالتوكين"
+
+#. module: wt_ultramsg
+#: model:ir.model.fields,field_description:wt_ultramsg.field_ultramsg_wizard_add_numbers__transfers_file
+msgid "Numbers File"
+msgstr "ملف الأرقام"
 
 #. module: wt_ultramsg
 #: code:addons/wt_ultramsg/wizard/wizard.py:0
@@ -812,7 +793,7 @@ msgstr "تحذير"
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_ultramsg_wizard_add_numbers
 msgid "Wizard for adding numbers to send group from a CSV file"
-msgstr "معالج لإضافة الأرقام إلى مجموعة إرسال من ملف CSV"
+msgstr "معالج إضافة الأرقام لمجموعة من ملف CSV"
 
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_ultramsg_wizard_send
@@ -848,7 +829,7 @@ msgstr "الرقم مستخدم بالفعل"
 #. module: wt_ultramsg
 #: model:ir.model.constraint,message:wt_ultramsg.constraint_ultramsg_message_title_uniq
 msgid "title already exists!"
-msgstr "عنوان الرسالة مستخدم بالفعل"
+msgstr "عنوان الرسال مستخدم بالفعل"
 
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_ultramsg_add_result
@@ -863,14 +844,14 @@ msgstr "ألترا مسج.رسالة"
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_ultramsg_message_report
 msgid "ultramsg.message_report"
-msgstr "ألترا مسج.تقرير إرسال"
+msgstr "ألترا مسج. تقرير إرسال"
 
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_ultramsg_moblie_no
 msgid "ultramsg.moblie_no"
-msgstr "ألترا مسج.رقم الجوال"
+msgstr "ألترا مسج. رقم الجوال"
 
 #. module: wt_ultramsg
 #: model:ir.model,name:wt_ultramsg.model_ultramsg_send_group
 msgid "ultramsg.send_group"
-msgstr "ألتر مسج.مجموعة إرسال"
+msgstr "ألتر مسج. مجموعة إرسال"
